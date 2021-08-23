@@ -20,7 +20,7 @@ public class Game : Codable {
     public var metacritic : Int?
     public var name : String?
     public var parentPlatforms : [ParentPlatform]?
-    public var platforms : [Platform]?
+    public var platforms : [ParentPlatform]?
     public var playtime : Int?
     public var rating : Double?
     public var ratingTop : Int?
@@ -38,37 +38,88 @@ public class Game : Codable {
     public var tba : Bool?
     public var updated : String?
     public var userGame : String?
-    
-    public init(id: Int? = nil, added: Int? = nil, addedByStatus: AddedByStatus? = nil, backgroundImage: String? = nil, clip: String? = nil, dominantColor: String? = nil, esrbRating: ESRBRating? = nil, genres: [Genre]? = nil, metacritic: Int? = nil, name: String? = nil, parentPlatforms: [ParentPlatform]? = nil, platforms: [Platform]? = nil, playtime: Int? = nil, rating: Double? = nil, ratingTop: Int? = nil, ratings: [Rating]? = nil, ratingsCount: Int? = nil, released: String? = nil, reviewsCount: Int? = nil, reviewsTextCount: Int? = nil, saturatedColor: String? = nil, shortScreenshots: [ShortScreenshot]? = nil, slug: String? = nil, stores: [StoreListing]? = nil, suggestionsCount: Int? = nil, tags: [Tag]? = nil, tba: Bool? = nil, updated: String? = nil, userGame: String? = nil) {
-        self.id = id
+    public var achievementsCount: Int?
+    public var additionsCount: Int?
+    public var alternativeNames: [String]?
+    public var backgroundImageAdditional: String?
+    public var creatorsCount: Int?
+    public var gameDetailsDescription: String?
+    public var descriptionRaw: String?
+    public var developers: [Developer]?
+    public var gameSeriesCount: Int?
+    public var metacriticPlatforms: [MetacriticPlatform]?
+    public var metacriticURL: String?
+    public var moviesCount: Int?
+    public var nameOriginal: String?
+    public var parentAchievementsCount: Int?
+    public var parentsCount: Int?
+    public var publishers: [Developer]?
+    public var reactions: [String: Int]?
+    public var redditCount: Int?
+    public var redditDescription: String?
+    public var redditLogo: String?
+    public var redditName: String?
+    public var redditURL: String?
+    public var screenshotsCount: Int?
+    public var twitchCount: Int?
+    public var website: String?
+    public var youtubeCount: Int?
+
+    public init(achievementsCount: Int?, added: Int?, addedByStatus: AddedByStatus?, additionsCount: Int?, alternativeNames: [String]?, backgroundImage: String?, backgroundImageAdditional: String?, clip: String?, creatorsCount: Int?, gameDetailsDescription: String?, descriptionRaw: String?, developers: [Developer]?, dominantColor: String?, esrbRating: ESRBRating?, gameSeriesCount: Int?, genres: [Genre]?, id: Int?, metacritic: Int?, metacriticPlatforms: [MetacriticPlatform]?, metacriticURL: String?, moviesCount: Int?, name: String?, nameOriginal: String?, parentAchievementsCount: Int?, parentPlatforms: [ParentPlatform]?, parentsCount: Int?, platforms: [ParentPlatform]?, playtime: Int?, publishers: [Developer]?, rating: Double?, ratingTop: Int?, ratings: [Rating]?, ratingsCount: Int?, reactions: [String: Int]?, redditCount: Int?, redditDescription: String?, redditLogo: String?, redditName: String?, redditURL: String?, released: String?, reviewsCount: Int?, reviewsTextCount: Int?, saturatedColor: String?, screenshotsCount: Int?, slug: String?, stores: [StoreListing]?, suggestionsCount: Int?, tags: [Tag]?, tba: Bool?, twitchCount: Int?, updated: String?, userGame: String?, website: String?, youtubeCount: Int?) {
+        self.achievementsCount = achievementsCount
         self.added = added
         self.addedByStatus = addedByStatus
+        self.additionsCount = additionsCount
+        self.alternativeNames = alternativeNames
         self.backgroundImage = backgroundImage
+        self.backgroundImageAdditional = backgroundImageAdditional
         self.clip = clip
+        self.creatorsCount = creatorsCount
+        self.gameDetailsDescription = gameDetailsDescription
+        self.descriptionRaw = descriptionRaw
+        self.developers = developers
         self.dominantColor = dominantColor
         self.esrbRating = esrbRating
+        self.gameSeriesCount = gameSeriesCount
         self.genres = genres
+        self.id = id
         self.metacritic = metacritic
+        self.metacriticPlatforms = metacriticPlatforms
+        self.metacriticURL = metacriticURL
+        self.moviesCount = moviesCount
         self.name = name
+        self.nameOriginal = nameOriginal
+        self.parentAchievementsCount = parentAchievementsCount
         self.parentPlatforms = parentPlatforms
+        self.parentsCount = parentsCount
         self.platforms = platforms
         self.playtime = playtime
+        self.publishers = publishers
         self.rating = rating
         self.ratingTop = ratingTop
         self.ratings = ratings
         self.ratingsCount = ratingsCount
+        self.reactions = reactions
+        self.redditCount = redditCount
+        self.redditDescription = redditDescription
+        self.redditLogo = redditLogo
+        self.redditName = redditName
+        self.redditURL = redditURL
         self.released = released
         self.reviewsCount = reviewsCount
         self.reviewsTextCount = reviewsTextCount
         self.saturatedColor = saturatedColor
-        self.shortScreenshots = shortScreenshots
+        self.screenshotsCount = screenshotsCount
         self.slug = slug
         self.stores = stores
         self.suggestionsCount = suggestionsCount
         self.tags = tags
         self.tba = tba
+        self.twitchCount = twitchCount
         self.updated = updated
         self.userGame = userGame
+        self.website = website
+        self.youtubeCount = youtubeCount
     }
     
     public static func list(page: Int, success: @escaping Success<GameList>, failure: @escaping Failure)

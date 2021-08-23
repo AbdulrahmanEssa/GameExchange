@@ -11,50 +11,27 @@ import SharedUI
 class GameSummaryView : UIView
 {
     struct Entity {
-        let name : String?
-        let developer: String?
-        let rating : String?
+        let header: GameHeaderView.Entity?
+        let genres : [String]?
         let images: [String]?
         
-        static let demo = Entity.init(name: "Bloodborne", developer: "From Software", rating: "10/10", images: ["placeholder_game_image", "placeholder_game_image", "placeholder_game_image", "placeholder_game_image"])
+        static let demo = Entity.init(header: .init(name: "Bloodborne", rating: "92", releaseDate: "2012/10/6", otherLabel: "From Software"), genres: ["Action", "RPG", "Horror", "Hack N Slash", "Souls-Like", "Eldritch", "Action", "RPG", "Horror", "Hack N Slash", "Souls-Like", "Eldritch"], images: ["placeholder_game_image", "placeholder_game_image", "placeholder_game_image", "placeholder_game_image"])
     }
     
     let imageHeight : CGFloat = 230
     
-    lazy var name : UILabel = {
-        let l = UILabel()
-        l.text = "Bloodborne"
-        l.font = fonts.title
-        l.textColor = colors.title
-        l.numberOfLines = 1
-        l.textAlignment = .left
-        l.minimumScaleFactor = 1
-        l.translatesAutoresizingMaskIntoConstraints = false
-        return l
+    lazy var header: GameHeaderView = {
+        let ghv = GameHeaderView()
+        ghv.entity = .init(name: "Bloodborne", rating: "92", releaseDate: "20012/10/6", otherLabel: "From Software")
+        ghv.translatesAutoresizingMaskIntoConstraints = false
+        return ghv
     }()
     
-    lazy var developer : UILabel = {
-        let l = UILabel()
-        l.text = "From Software"
-        l.font = fonts.subtitle
-        l.textColor = colors.subtitle
-        l.numberOfLines = 1
-        l.textAlignment = .left
-        l.minimumScaleFactor = 1
-        l.translatesAutoresizingMaskIntoConstraints = false
-        return l
-    }()
-    
-    lazy var rating : UILabel = {
-        let l = UILabel()
-        l.text = "10/10"
-        l.font = fonts.subtitle
-        l.textColor = colors.primary
-        l.numberOfLines = 1
-        l.textAlignment = .left
-        l.minimumScaleFactor = 1
-        l.translatesAutoresizingMaskIntoConstraints = false
-        return l
+    lazy var genreBar : TagBarView = {
+        let tbv = TagBarView()
+        tbv.entity = .demo
+        tbv.translatesAutoresizingMaskIntoConstraints = false;
+        return tbv
     }()
     
     lazy var images : DynamicHorizontalScrollView = {
@@ -65,6 +42,17 @@ class GameSummaryView : UIView
         dsv.layer.borderColor = colors.separator.cgColor
         dsv.translatesAutoresizingMaskIntoConstraints = false
         return dsv
+    }()
+    
+    lazy var esrb : UIImageView = {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFill
+        iv.trySetImage(named: assets.placeholderESRB)
+        iv.layer.cornerRadius = 0
+        iv.layer.borderWidth = 0
+        iv.layer.borderColor = colors.separator.cgColor
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        return iv
     }()
     
     lazy var separator = Separator()
@@ -85,23 +73,22 @@ class GameSummaryView : UIView
     
     func setupLayout()
     {
-        addSubviews([name, developer, rating, images, separator])
+        separator.isHidden = true
+        addSubviews([header, genreBar, images, separator,])
         
         addConstraints([
-            name.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            name.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            name.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             
-            developer.topAnchor.constraint(equalTo: name.bottomAnchor, constant: 5),
-            developer.leadingAnchor.constraint(equalTo: name.leadingAnchor, constant: 0),
+            header.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            header.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            header.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+
+            genreBar.topAnchor.constraint(equalTo: header.bottomAnchor, constant: 5),
+            genreBar.leadingAnchor.constraint(equalTo: header.leadingAnchor, constant: 0),
+            genreBar.trailingAnchor.constraint(equalTo: header.trailingAnchor, constant: 0),
             
-            rating.topAnchor.constraint(equalTo: developer.topAnchor, constant: 0),
-            rating.leadingAnchor.constraint(equalTo: developer.trailingAnchor, constant: 0),
-            rating.trailingAnchor.constraint(equalTo: name.trailingAnchor, constant: -10),
-            
-            images.topAnchor.constraint(equalTo: rating.bottomAnchor, constant: 0),
-            images.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
-            images.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -0),
+            images.topAnchor.constraint(equalTo: genreBar.bottomAnchor, constant: 5),
+            images.leadingAnchor.constraint(equalTo: header.leadingAnchor, constant: 0),
+            images.trailingAnchor.constraint(equalTo: header.trailingAnchor, constant: 0),
             images.heightAnchor.constraint(equalToConstant: imageHeight),
             
             separator.topAnchor.constraint(equalTo: images.bottomAnchor, constant: 10),
@@ -109,14 +96,27 @@ class GameSummaryView : UIView
             separator.trailingAnchor.constraint(equalTo: trailingAnchor, constant:  0),
             separator.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -0),
         ])
+        
+        images.addSubview(esrb)
+        
+        images.addConstraints([
+            esrb.topAnchor.constraint(greaterThanOrEqualTo: images.topAnchor, constant: 0),
+            esrb.leadingAnchor.constraint(greaterThanOrEqualTo: images.leadingAnchor, constant: 0),
+            esrb.trailingAnchor.constraint(equalTo: images.trailingAnchor, constant: -10),
+            esrb.bottomAnchor.constraint(equalTo: images.bottomAnchor, constant: -10),
+            esrb.widthAnchor.constraint(equalTo: esrb.heightAnchor, multiplier: 2/3, constant: 0),
+            
+            esrb.widthAnchor.constraint(equalToConstant: 40),
+            esrb.heightAnchor.constraint(equalToConstant: 60),
+        ])
     }
     
     func reloadData()
     {
         guard let e = entity else {return}
-        name.text = e.name
-        developer.text = e.developer
-        rating.text = e.rating
+        
+        header.entity = e.header
+        genreBar.entity = .init(genres: e.genres ?? [])
         
         var imgs : [UIView] = []
         
@@ -126,7 +126,7 @@ class GameSummaryView : UIView
                 iv.trySetImage(named: imageString)
                 iv.translatesAutoresizingMaskIntoConstraints = false;
                 iv.addConstraints([
-                    iv.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
+                    iv.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 20),
                     iv.heightAnchor.constraint(equalToConstant: imageHeight)
                 ])
                 return iv;
@@ -136,7 +136,6 @@ class GameSummaryView : UIView
         })
         
         images.views = imgs
-        
     }
 }
 
@@ -144,33 +143,3 @@ class GameSummaryTableViewCell: UITableViewCell
 {
     static let id = "GameSummaryTableViewCell"
 }
-
-//    public var id : Int?                                      NO SHOW
-//    public var added : Int?                                   NO SHOW
-//    public var addedByStatus : AddedByStatus?                 NO SHOW
-//    public var backgroundImage : String?                      READY
-//    public var clip : String?                                 NO SHOW
-//    public var dominantColor : String?                        MAYBE
-//    public var esrbRating : ESRBRating?                       SHOW
-//    public var genres : [Genre]?                              SHOW
-//    public var metacritic : Int?                              SHOW
-//    public var name : String?                                 READY
-//    public var parentPlatforms : [ParentPlatform]?            NO SHOW
-//    public var platforms : [Platform]?                        NO SHOW
-//    public var playtime : Int?                                NO SHOW
-//    public var rating : Double?                               NO SHOW
-//    public var ratingTop : Int?                               NO SHOW
-//    public var ratings : [Rating]?                            NO SHOW
-//    public var ratingsCount : Int?                            NO SHOW
-//    public var released : String?                             SHOW
-//    public var reviewsCount : Int?                            NO SHOW
-//    public var reviewsTextCount : Int?                        NO SHOW
-//    public var saturatedColor : String?                       NO SHOW
-//    public var shortScreenshots : [ShortScreenshot]?          READY
-//    public var slug : String?                                 NO SHOW
-//    public var stores : [StoreListing]?                       NO SHOW
-//    public var suggestionsCount : Int?                        NO SHOW
-//    public var tags : [Tag]?                                  NO SHOW
-//    public var tba : Bool?                                    SHOW
-//    public var updated : String?                              NO SHOW
-//    public var userGame : String?                             NO SHOW

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 
 public extension UIImageView
 {
@@ -21,6 +21,8 @@ public extension UIImageView
         }
         else
         {
+            let url = URL(string: named)
+            kf.setImage(with: url)
             return false
         }
     }

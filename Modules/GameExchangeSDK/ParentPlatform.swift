@@ -9,8 +9,12 @@ import Foundation
 
 public class ParentPlatform : Codable {
     public var platform : Platform?
+    public var requirements : Requirements?
+    public var releasedAt : String?
     
-    public init(platform: Platform? = nil) {
+    public init(platform: Platform? = nil, requirements: Requirements? = nil, releasedAt: String? = nil) {
         self.platform = platform
+        self.releasedAt = releasedAt
+        self.requirements = requirements
     }
 }

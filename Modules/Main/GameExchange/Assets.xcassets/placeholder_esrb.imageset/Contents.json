@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "placeholder_esrb.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

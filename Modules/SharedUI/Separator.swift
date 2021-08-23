@@ -9,7 +9,7 @@ import UIKit
 
 public class Separator : UIView
 {
-    public var height : CGFloat = 4 {
+    public var height : CGFloat = 1 {
         didSet{
             heightConstraint?.constant = height
             setNeedsUpdateConstraints()

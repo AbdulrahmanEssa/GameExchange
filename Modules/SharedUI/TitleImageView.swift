@@ -19,7 +19,7 @@ public class TitleImageView: TitleAccessoryView {
     lazy var imageView : UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
-        iv.trySetImage(named: "placeholder_store")
+        iv.trySetImage(named: assets.metacriticBadge)
         iv.layer.cornerRadius = 0
         iv.layer.borderWidth = 0
         iv.layer.borderColor = colors.separator.cgColor
@@ -40,11 +40,17 @@ public class TitleImageView: TitleAccessoryView {
         addSubview(imageView)
         
         addConstraints([
+            imageView.topAnchor.constraint(greaterThanOrEqualTo: topAnchor, constant: 0),
+            imageView.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: 0),
             imageView.leadingAnchor.constraint(greaterThanOrEqualTo: titleLabel.trailingAnchor, constant: 10),
-            imageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+            imageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             imageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            imageView.heightAnchor.constraint(equalToConstant: 20),
+            imageView.heightAnchor.constraint(equalToConstant: 70),
             imageView.widthAnchor.constraint(equalTo: heightAnchor),
         ])
+        
+        titleLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
+        imageView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        imageView.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     }
 }

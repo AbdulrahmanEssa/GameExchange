@@ -11,7 +11,7 @@ import Games
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    let entryVC = GamesListViewController()
+    let entryVC = DocumentUploadViewController()
     var window : UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

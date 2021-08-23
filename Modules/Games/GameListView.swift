@@ -8,7 +8,12 @@
 import UIKit
 import SharedUI
 
-class GamesListView : UIView
+protocol GameListViewDelegate : AnyObject {
+    func gameListView(willReachLastCellOn view : GameListView)
+    func gameListView(_ view: GameListView, didTapCellWith id: Int)
+}
+
+class GameListView : UIView
 {
     struct Entity {
         let sections: [SectionEntity]?
@@ -71,23 +76,22 @@ class GamesListView : UIView
     func reloadData()
     {
         tableView.reloadData();
-        
     }
 }
 
-extension GamesListView : UITableViewDelegate
+extension GameListView : UITableViewDelegate
 {
     
 }
 
-extension GamesListView : UITableViewDataSource
+extension GameListView : UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return entity?.sections?[section].footer
+        return entity?.sections?[section].footer ?? EmptySectionHeader()
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return entity?.sections?[section].header
+        return entity?.sections?[section].header ?? EmptySectionHeader()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
