@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B3243D09263095630002D8AF /* AssetTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3243D08263095630002D8AF /* AssetTheme.swift */; };
 		B3243D0C2630993A0002D8AF /* DefaultAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3243D0B2630993A0002D8AF /* DefaultAssets.swift */; };
+		B3271DEB2708907C000B1B3B /* UICollectionView+CellSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3271DEA2708907C000B1B3B /* UICollectionView+CellSize.swift */; };
 		B338587D2628C2C4006B8BA4 /* TripMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B338587C2628C2C4006B8BA4 /* TripMarker.swift */; };
 		B3494D3F26A0328700048CCA /* Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3494D3E26A0328700048CCA /* Separator.swift */; };
 		B35DF6E6261B031A00E9FAA0 /* DynamicVerticalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35DF6E5261B031A00E9FAA0 /* DynamicVerticalScrollView.swift */; };
@@ -49,6 +50,7 @@
 /* Begin PBXFileReference section */
 		B3243D08263095630002D8AF /* AssetTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetTheme.swift; sourceTree = "<group>"; };
 		B3243D0B2630993A0002D8AF /* DefaultAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAssets.swift; sourceTree = "<group>"; };
+		B3271DEA2708907C000B1B3B /* UICollectionView+CellSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+CellSize.swift"; sourceTree = "<group>"; };
 		B338587C2628C2C4006B8BA4 /* TripMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripMarker.swift; sourceTree = "<group>"; };
 		B3494D3E26A0328700048CCA /* Separator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Separator.swift; sourceTree = "<group>"; };
 		B35DF6E5261B031A00E9FAA0 /* DynamicVerticalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicVerticalScrollView.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				B3DCD5E3261479D1000E2C2C /* UIImageView+trySetImage.swift */,
 				B3DCD5EC26147A3D000E2C2C /* UIView+AddSubviews.swift */,
 				B3DCD5EF26147A4C000E2C2C /* UIViewController + Extensions.swift */,
+				B3271DEA2708907C000B1B3B /* UICollectionView+CellSize.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B398EBF1262CE1EB006CA9FF /* BaseView.swift in Sources */,
+				B3271DEB2708907C000B1B3B /* UICollectionView+CellSize.swift in Sources */,
 				B3DCD5FA26147AB7000E2C2C /* WajihaPrefixedField.swift in Sources */,
 				B3C7A3F926BFD57800A6E972 /* DarkColors.swift in Sources */,
 				B3494D3F26A0328700048CCA /* Separator.swift in Sources */,

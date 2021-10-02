@@ -12,7 +12,7 @@ import GameExchangeSDK
 
 public class GameListViewController : UIViewController
 {
-    var ui = GameListView()
+    var ui = GameGridView()
     var page : Int = 1
     
     var games : [Game]? = []
@@ -25,8 +25,9 @@ public class GameListViewController : UIViewController
     public override func viewDidLoad() {
         super.viewDidLoad()
         ui.entity = .demo
+        ui.scrollDirection = .vertical
         hideNavbarIfFirstController()
-        fetchData()
+//        fetchData()
     }
     
     public func fetchData()
@@ -59,6 +60,12 @@ public class GameListViewController : UIViewController
     {
         let list : [GameListView.CellEntity]? = games?.map({self.map(model: $0)})
         
-        ui.entity = .init(sections: [.init(header: nil, cells: list, footer: nil)])
+//        ui.entity = .init(sections: [.init(header: nil, cells: list, footer: nil)])
     }
+}
+
+/// Access Points
+extension GameListViewController {
+    
+    
 }

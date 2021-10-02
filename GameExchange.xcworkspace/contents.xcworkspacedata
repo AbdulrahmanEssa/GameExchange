@@ -5,7 +5,7 @@
       location = "group:Modules/Main/GameExchange.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Modules/SharedUI/SharedUI.xcodeproj">
+      location = "group:../SaryTask/Modules/HomePage/HomePage.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Modules/Main/GameExchange/../../Games/Games.xcodeproj">
@@ -15,5 +15,8 @@
    </FileRef>
    <FileRef
       location = "group:Modules/GameExchangeSDK/GameExchangeSDK.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Modules/SharedUI/SharedUI.xcodeproj">
    </FileRef>
 </Workspace>

@@ -18,6 +18,7 @@ public protocol AssetTheme {
     // Placeholders
     var placeholderGameImage : String {get}
     var placeholderESRB : String {get}
+    var placeholderGameCover: String {get}
     
     // Games
     var metacriticBadge : String {get}

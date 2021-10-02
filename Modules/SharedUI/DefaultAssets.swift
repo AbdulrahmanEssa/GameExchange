@@ -18,6 +18,7 @@ class DefaultAssets: AssetTheme
     // Placeholders
     var placeholderGameImage: String = "placeholder_game_image"
     var placeholderESRB: String = "placeholder_esrb"
+    var placeholderGameCover: String = "placeholder_game_cover"
     
     // Games
     var metacriticBadge: String = "metacritic_badge"

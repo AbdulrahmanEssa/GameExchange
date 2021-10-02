@@ -11,8 +11,10 @@ import Kingfisher
 public extension UIImageView
 {
     @discardableResult
-    func trySetImage(named: String) -> Bool
+    func trySetImage(named: String?) -> Bool
     {
+        guard let named = named else {return false}
+        
         let i = UIImage(named: named)
         if i != nil
         {
