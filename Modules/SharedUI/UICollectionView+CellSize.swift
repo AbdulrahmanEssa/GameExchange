@@ -7,19 +7,20 @@
 
 import UIKit
 
-extension UICollectionViewFlowLayout {
+public extension UICollectionViewFlowLayout {
     
     enum CellSize {
         case fullWidth(height: CellHeight)
         case halfWidth(height: CellHeight)
         case thirdWidth(height: CellHeight)
         case quarterWidth(height: CellHeight)
+        case multiItem(items: CGFloat, height: CellHeight)
         case custom(size : CGSize)
     }
     
     enum CellHeight {
         case singleItem
-        case doubleItem
+        case multiItem(items: CGFloat)
         case custom(height: CGFloat)
     }
     
@@ -35,6 +36,8 @@ extension UICollectionViewFlowLayout {
             return CGSize(width: collectionView.bounds.width / 3, height: getCellHeight(height: h))
         case .quarterWidth(height: let h):
             return CGSize(width: collectionView.bounds.width, height: getCellHeight(height: h))
+        case .multiItem(items: let i, height: let h):
+            return CGSize(width: itemSize.width * i, height: getCellHeight(height: h))
         case .custom(size: let s):
             return s
         }
@@ -45,8 +48,8 @@ extension UICollectionViewFlowLayout {
         switch height {
         case .singleItem:
             return itemSize.height
-        case .doubleItem:
-            return itemSize.height
+        case .multiItem(items: let i):
+            return itemSize.height * CGFloat(i)
         case .custom(height: let h):
             return h
         }

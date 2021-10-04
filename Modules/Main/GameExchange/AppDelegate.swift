@@ -7,11 +7,12 @@
 
 import UIKit
 import Games
+import HomePage
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    let entryVC = GameListViewController()
+    let entryVC = HomeViewController()
     var window : UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

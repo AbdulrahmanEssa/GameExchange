@@ -104,7 +104,7 @@ public class WajihaPinField : UIView
         setupLayout()
     }
     
-    func setupLayout()
+    private func setupLayout()
     {
         addSubview(stackView)
         reloadView()

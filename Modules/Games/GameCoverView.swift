@@ -16,13 +16,6 @@ class GameCoverCollectionViewCell : UICollectionViewCell
 
 class GameCoverView : UIView
 {
-    struct Entity {
-        var name : String?
-        var image: String?
-        
-        static let demo = Entity(name: "Bloodborne 2: Curse of the big blood moon : Revengance", image: ThemeManager.instance.theme.assets.placeholderGameCover)
-    }
-    
     lazy var imageView : UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
@@ -48,7 +41,7 @@ class GameCoverView : UIView
         return lbl
     }()
     
-    var entity: Entity? {
+    var entity: GameListingEntity? {
         didSet{
             reloadData()
         }
@@ -63,7 +56,7 @@ class GameCoverView : UIView
         setupLayout()
     }
     
-    func setupLayout()
+    private func setupLayout()
     {
         addSubviews([imageView, nameLabel])
         
@@ -81,11 +74,11 @@ class GameCoverView : UIView
         ])
     }
     
-    func reloadData()
+    private func reloadData()
     {
         guard let e = entity else {return}
         
-        nameLabel.text = e.name
-        imageView.trySetImage(named: e.image)
+        nameLabel.text = e.header.name
+        imageView.trySetImage(named: e.images?[1])
     }
 }

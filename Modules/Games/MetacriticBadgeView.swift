@@ -21,7 +21,7 @@ class MetacriticBadgeView : UIView
         iv.contentMode = .scaleAspectFill
         iv.trySetImage(named: assets.metacriticBadge)
         iv.layer.cornerRadius = 0
-        iv.layer.borderWidth = 1
+        iv.layer.borderWidth = 2
         iv.layer.borderColor = colors.separator.cgColor
         iv.layer.masksToBounds = true
         iv.clipsToBounds = true
@@ -71,7 +71,7 @@ class MetacriticBadgeView : UIView
         setupLayout()
     }
     
-    func setupLayout()
+    private func setupLayout()
     {
         addSubviews([backgroundView, ratingLabel, sourceLabel])
         
@@ -99,7 +99,7 @@ class MetacriticBadgeView : UIView
         super.draw(rect)
     }
     
-    func reloadData()
+    private func reloadData()
     {
         guard let e = entity else {return}
         

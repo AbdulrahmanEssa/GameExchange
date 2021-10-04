@@ -39,7 +39,7 @@ class TagView : UIView {
         setupLayout()
     }
     
-    func setupLayout()
+    private func setupLayout()
     {
         addSubview(label)
         

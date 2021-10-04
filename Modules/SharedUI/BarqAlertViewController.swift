@@ -158,7 +158,7 @@ public class WajihaAlertView : UIView
         addGestureRecognizer(tap)
     }
     
-    func setupLayout()
+    private func setupLayout()
     {
         addSubview(alertContainer)
         
@@ -203,7 +203,7 @@ public class WajihaAlertView : UIView
         print("out of bounds tap")
     }
     
-    func reloadData()
+    private func reloadData()
     {
         guard let e = entity else {return}
         

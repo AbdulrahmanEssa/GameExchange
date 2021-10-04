@@ -93,7 +93,7 @@ public class WajihaKeyboard : UIView
 
     }
     
-    func setupLayout()
+    private func setupLayout()
     {
         addSubview(collectionView)
 
@@ -105,7 +105,7 @@ public class WajihaKeyboard : UIView
         ])
     }
     
-    func reloadData()
+    private func reloadData()
     {
         guard let e = entity else {return}
         

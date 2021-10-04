@@ -10,14 +10,6 @@ import SharedUI
 
 class GameSummaryView : UIView
 {
-    struct Entity {
-        let header: GameHeaderView.Entity?
-        let genres : [String]?
-        let images: [String]?
-        
-        static let demo = Entity.init(header: .init(name: "Bloodborne", rating: "92", releaseDate: "2012/10/6", otherLabel: "From Software"), genres: ["Action", "RPG", "Horror", "Hack N Slash", "Souls-Like", "Eldritch", "Action", "RPG", "Horror", "Hack N Slash", "Souls-Like", "Eldritch"], images: ["placeholder_game_image", "placeholder_game_image", "placeholder_game_image", "placeholder_game_image"])
-    }
-    
     let imageHeight : CGFloat = 230
     
     lazy var header: GameHeaderView = {
@@ -58,7 +50,7 @@ class GameSummaryView : UIView
     lazy var separator = Separator()
     
     
-    var entity: Entity? {
+    var entity: GameListingEntity? {
         didSet{
             reloadData()
         }
@@ -67,11 +59,11 @@ class GameSummaryView : UIView
     convenience init()
     {
         self.init(frame: .zero)
-        backgroundColor = colors.background
+        backgroundColor = colors.void
         setupLayout()
     }
     
-    func setupLayout()
+    private func setupLayout()
     {
         separator.isHidden = true
         addSubviews([header, genreBar, images, separator,])
@@ -111,7 +103,7 @@ class GameSummaryView : UIView
         ])
     }
     
-    func reloadData()
+    private func reloadData()
     {
         guard let e = entity else {return}
         
@@ -139,7 +131,7 @@ class GameSummaryView : UIView
     }
 }
 
-class GameSummaryTableViewCell: UITableViewCell
+class GameSummaryCollectionViewCell: UICollectionViewCell
 {
-    static let id = "GameSummaryTableViewCell"
+    static let id = "UICollectionViewCell"
 }

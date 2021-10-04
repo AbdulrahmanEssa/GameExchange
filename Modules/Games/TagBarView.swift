@@ -37,7 +37,7 @@ class TagBarView : UIView
         setupLayout()
     }
     
-    func setupLayout()
+    private func setupLayout()
     {
         addSubview(scrollView)
         
@@ -49,7 +49,7 @@ class TagBarView : UIView
         ])
     }
     
-    func reloadData()
+    private func reloadData()
     {
         guard let e = entity else {return}
         

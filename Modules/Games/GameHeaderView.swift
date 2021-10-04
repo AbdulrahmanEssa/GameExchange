@@ -9,13 +9,6 @@ import UIKit
 
 class GameHeaderView : UIView
 {
-    struct Entity {
-        let name : String?
-        let rating : String?
-        let releaseDate: String?
-        let otherLabel: String?
-    }
-    
     lazy var name : UILabel = {
         let l = UILabel()
         l.text = "Bloodborne"
@@ -60,7 +53,7 @@ class GameHeaderView : UIView
         return lbl
     }()
     
-    var entity: Entity? {
+    var entity: GameListingEntity.Header? {
         didSet{
             reloadData()
         }
@@ -69,11 +62,11 @@ class GameHeaderView : UIView
     convenience init()
     {
         self.init(frame: .zero)
-        
+        backgroundColor = colors.void
         setupLayout()
     }
     
-    func setupLayout()
+    private func setupLayout()
     {
         
         addSubviews([name, rating,otherLabel, releaseDate])
@@ -101,7 +94,7 @@ class GameHeaderView : UIView
         releaseDate.setContentHuggingPriority(.defaultHigh, for: .horizontal)
     }
     
-    func reloadData()
+    private func reloadData()
     {
         guard let e = entity else {return}
         name.text = e.name

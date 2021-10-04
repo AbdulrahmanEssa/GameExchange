@@ -39,7 +39,7 @@ public class TripMarker : UIView
         setupLayout()
     }
     
-    func setupLayout()
+    private func setupLayout()
     {
         addSubviews([dot, line])
         

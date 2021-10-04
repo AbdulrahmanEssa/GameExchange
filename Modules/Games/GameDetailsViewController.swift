@@ -43,12 +43,12 @@ class GameDetailsView : UIView
         setupLayout()
     }
     
-    func setupLayout()
+    private func setupLayout()
     {
         
     }
     
-    func reloadData()
+    private func reloadData()
     {
         guard let e = entity else {return}
         

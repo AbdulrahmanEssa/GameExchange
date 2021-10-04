@@ -105,7 +105,7 @@ public class WajihaDoubleLabel : UIView
         setupLayout()
     }
     
-    func setupLayout()
+    private func setupLayout()
     {
         addSubviews([watermarkImage, titleLabel, subtitleLabel])
         

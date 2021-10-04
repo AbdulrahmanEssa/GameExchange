@@ -109,7 +109,7 @@ public class WajihaPrefixedField : UIView
         setupLayout()
     }
     
-    func setupLayout()
+    private func setupLayout()
     {
         addSubviews([validationIndicator, prefixLabel, separator, fieldLabel, sendButton])
 
@@ -159,7 +159,7 @@ public class WajihaPrefixedField : UIView
         }
     }
     
-    func reloadData()
+    private func reloadData()
     {
                 
         if(text == "")

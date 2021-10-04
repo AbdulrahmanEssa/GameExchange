@@ -47,7 +47,7 @@ public class LabelSectionHeader : UIView
         setupLayout()
     }
     
-    func setupLayout()
+    private func setupLayout()
     {
         
         addSubviews([titleLabel])

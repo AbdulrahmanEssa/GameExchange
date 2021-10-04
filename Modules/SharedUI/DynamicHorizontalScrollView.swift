@@ -61,7 +61,7 @@ public class DynamicHorizontalScrollView : UIView
         setupLayout()
     }
     
-    func setupLayout()
+    private func setupLayout()
     {
         addSubviews([scrollView])
         scrollView.addSubview(stackView)
@@ -82,7 +82,7 @@ public class DynamicHorizontalScrollView : UIView
         ])
     }
     
-    func reloadData()
+    private func reloadData()
     {
         stackView.subviews.forEach({$0.removeFromSuperview()})
 

@@ -14,6 +14,8 @@
 		B337B40526C1AC460062459F /* Games.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B337B40326C1AC460062459F /* Games.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B3494D3B26A0212100048CCA /* SharedUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3494D3A26A0212100048CCA /* SharedUI.framework */; };
 		B3494D3C26A0212100048CCA /* SharedUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3494D3A26A0212100048CCA /* SharedUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B3B625262709B95B00BBBDE7 /* HomePage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B625252709B95B00BBBDE7 /* HomePage.framework */; };
+		B3B625272709B95B00BBBDE7 /* HomePage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3B625252709B95B00BBBDE7 /* HomePage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,6 +25,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				B3B625272709B95B00BBBDE7 /* HomePage.framework in Embed Frameworks */,
 				B337B40526C1AC460062459F /* Games.framework in Embed Frameworks */,
 				B3494D3C26A0212100048CCA /* SharedUI.framework in Embed Frameworks */,
 			);
@@ -39,6 +42,7 @@
 		B3343419269D822B00B8EB05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B337B40326C1AC460062459F /* Games.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Games.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3494D3A26A0212100048CCA /* SharedUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SharedUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3B625252709B95B00BBBDE7 /* HomePage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HomePage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3B625262709B95B00BBBDE7 /* HomePage.framework in Frameworks */,
 				B337B40426C1AC460062459F /* Games.framework in Frameworks */,
 				B3494D3B26A0212100048CCA /* SharedUI.framework in Frameworks */,
 			);
@@ -85,6 +90,7 @@
 		B3494D3926A0212100048CCA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B3B625252709B95B00BBBDE7 /* HomePage.framework */,
 				B337B40326C1AC460062459F /* Games.framework */,
 				B3494D3A26A0212100048CCA /* SharedUI.framework */,
 			);

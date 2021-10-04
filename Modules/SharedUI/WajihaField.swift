@@ -69,7 +69,7 @@ public class WajihaField: UIView
         setupLayout()
     }
     
-    func setupLayout()
+    private func setupLayout()
     {
         addSubview(label)
         
@@ -89,7 +89,7 @@ public class WajihaField: UIView
         backgroundColor = colors.background
     }
     
-    func reloadData()
+    private func reloadData()
     {
         if (text == "")
         {
