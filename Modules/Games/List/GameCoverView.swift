@@ -79,6 +79,6 @@ class GameCoverView : UIView
         guard let e = entity else {return}
         
         nameLabel.text = e.header.name
-        imageView.trySetImage(named: e.images?[1])
+        imageView.trySetImage(named: e.images?[0])
     }
 }

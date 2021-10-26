@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class LabelSectionHeader : UIView
+public class LabelHeader : UIView
 {
     public var title : String?{
         didSet{
@@ -26,6 +26,7 @@ public class LabelSectionHeader : UIView
             titleLabel.textColor = textColor
         }
     }
+    
     
     lazy var titleLabel : UILabel = {
         let l = UILabel()
@@ -60,4 +61,8 @@ public class LabelSectionHeader : UIView
         ])
     }
     
+}
+
+public class LabelHeaderCollectionViewCell : UICollectionViewCell {
+    public static let id = "LabelHeaderCollectionViewCell"
 }

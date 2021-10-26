@@ -11,9 +11,9 @@ import SharedUI
 class TagBarView : UIView
 {
     struct Entity {
-        var genres : [String]
+        var tags : [String]
         
-        static var demo = Entity(genres: ["Action", "RPG", "Horror", "Hack N Slash", "Souls-Like", "Eldritch"])
+        static var demo = Entity(tags: ["Action", "RPG", "Horror", "Hack N Slash", "Souls-Like", "Eldritch"])
     }
     
     lazy var scrollView: DynamicHorizontalScrollView = {
@@ -33,7 +33,7 @@ class TagBarView : UIView
     convenience init()
     {
         self.init(frame: .zero)
-        
+        backgroundColor = colors.void
         setupLayout()
     }
     
@@ -55,7 +55,7 @@ class TagBarView : UIView
         
         var genreLabels : [UIView] = []
         
-        for genre in e.genres {
+        for genre in e.tags {
             
             let genreView : TagView = {
                 let tv = TagView()

@@ -12,8 +12,8 @@ import Games
 public class HomeViewController : UIViewController
 {
     var ui = HomeView()
-    let latestReleaseController = GameListViewController.summaries(itemLimit: 1, direction: .horizontal)
-    let topTenController = GameListViewController.singleRow(itemLimit: 10)
+    let latestReleaseController = GameListViewController.list(page: 1, itemLimit: 1)
+    let topTenController = GameListViewController.singleRow(page: 1, itemLimit: 0, viewMode: .cover)
     
     public override func loadView() {
         super.loadView()

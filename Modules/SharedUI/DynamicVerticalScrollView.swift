@@ -28,9 +28,10 @@ public class DynamicVerticalScrollView : UIView
         }
     }
     
-    let scrollView : UIScrollView = {
+    lazy var scrollView : UIScrollView = {
         let sv = UIScrollView()
         sv.alwaysBounceHorizontal = false
+        sv.backgroundColor = colors.void
         sv.translatesAutoresizingMaskIntoConstraints = false
         return sv
     }()
@@ -40,6 +41,7 @@ public class DynamicVerticalScrollView : UIView
         sv.axis = .vertical
         sv.alignment = .fill
         sv.distribution = .fill
+        sv.backgroundColor = colors.void
         sv.spacing = 0
         sv.translatesAutoresizingMaskIntoConstraints = false
         return sv
@@ -48,7 +50,7 @@ public class DynamicVerticalScrollView : UIView
     convenience init() {
         self.init(frame: .zero)
         
-        backgroundColor = colors.background
+        backgroundColor = colors.void
         setupLayout()
     }
     

@@ -43,7 +43,7 @@ public class Game : Codable {
     public var alternativeNames: [String]?
     public var backgroundImageAdditional: String?
     public var creatorsCount: Int?
-    public var gameDetailsDescription: String?
+    public var description: String?
     public var descriptionRaw: String?
     public var developers: [Developer]?
     public var gameSeriesCount: Int?
@@ -65,7 +65,7 @@ public class Game : Codable {
     public var website: String?
     public var youtubeCount: Int?
 
-    public init(achievementsCount: Int?, added: Int?, addedByStatus: AddedByStatus?, additionsCount: Int?, alternativeNames: [String]?, backgroundImage: String?, backgroundImageAdditional: String?, clip: String?, creatorsCount: Int?, gameDetailsDescription: String?, descriptionRaw: String?, developers: [Developer]?, dominantColor: String?, esrbRating: ESRBRating?, gameSeriesCount: Int?, genres: [Genre]?, id: Int?, metacritic: Int?, metacriticPlatforms: [MetacriticPlatform]?, metacriticURL: String?, moviesCount: Int?, name: String?, nameOriginal: String?, parentAchievementsCount: Int?, parentPlatforms: [ParentPlatform]?, parentsCount: Int?, platforms: [ParentPlatform]?, playtime: Int?, publishers: [Developer]?, rating: Double?, ratingTop: Int?, ratings: [Rating]?, ratingsCount: Int?, reactions: [String: Int]?, redditCount: Int?, redditDescription: String?, redditLogo: String?, redditName: String?, redditURL: String?, released: String?, reviewsCount: Int?, reviewsTextCount: Int?, saturatedColor: String?, screenshotsCount: Int?, slug: String?, stores: [StoreListing]?, suggestionsCount: Int?, tags: [Tag]?, tba: Bool?, twitchCount: Int?, updated: String?, userGame: String?, website: String?, youtubeCount: Int?) {
+    public init(achievementsCount: Int?, added: Int?, addedByStatus: AddedByStatus?, additionsCount: Int?, alternativeNames: [String]?, backgroundImage: String?, backgroundImageAdditional: String?, clip: String?, creatorsCount: Int?, description: String?, descriptionRaw: String?, developers: [Developer]?, dominantColor: String?, esrbRating: ESRBRating?, gameSeriesCount: Int?, genres: [Genre]?, id: Int?, metacritic: Int?, metacriticPlatforms: [MetacriticPlatform]?, metacriticURL: String?, moviesCount: Int?, name: String?, nameOriginal: String?, parentAchievementsCount: Int?, parentPlatforms: [ParentPlatform]?, parentsCount: Int?, platforms: [ParentPlatform]?, playtime: Int?, publishers: [Developer]?, rating: Double?, ratingTop: Int?, ratings: [Rating]?, ratingsCount: Int?, reactions: [String: Int]?, redditCount: Int?, redditDescription: String?, redditLogo: String?, redditName: String?, redditURL: String?, released: String?, reviewsCount: Int?, reviewsTextCount: Int?, saturatedColor: String?, screenshotsCount: Int?, slug: String?, stores: [StoreListing]?, suggestionsCount: Int?, tags: [Tag]?, tba: Bool?, twitchCount: Int?, updated: String?, userGame: String?, website: String?, youtubeCount: Int?) {
         self.achievementsCount = achievementsCount
         self.added = added
         self.addedByStatus = addedByStatus
@@ -75,7 +75,7 @@ public class Game : Codable {
         self.backgroundImageAdditional = backgroundImageAdditional
         self.clip = clip
         self.creatorsCount = creatorsCount
-        self.gameDetailsDescription = gameDetailsDescription
+        self.description = description
         self.descriptionRaw = descriptionRaw
         self.developers = developers
         self.dominantColor = dominantColor
@@ -124,11 +124,11 @@ public class Game : Codable {
     
     public static func list(page: Int, success: @escaping Success<GameList>, failure: @escaping Failure)
     {
-        Router.game.list(page: 1).request { gameList in
-            success(gameList)
-        } failure: { error in
-            failure(error)
-        }
-
+        Router.game.list(page: page).request(success: success, failure: failure)
+    }
+    
+    public static func details(id: Int, success: @escaping Success<Game>, failure: @escaping Failure)
+    {
+        Router.game.details(id: id).request(success: success, failure: failure)
     }
 }

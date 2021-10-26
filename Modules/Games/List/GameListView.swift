@@ -8,6 +8,10 @@
 import UIKit
 import SharedUI
 
+protocol GameListViewDelegate : AnyObject{
+    func gameList(_ view: GameListView, didSelectGameWith indexPath: IndexPath)
+}
+
 class GameListView : UIView
 {
     struct Entity {
@@ -72,6 +76,8 @@ class GameListView : UIView
         }
     }
     
+    weak var delegate : GameListViewDelegate?
+    
     lazy var collectionView : UICollectionView = {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         cv.backgroundColor = colors.void
@@ -126,7 +132,9 @@ class GameListView : UIView
 
 extension GameListView: UICollectionViewDelegate
 {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.gameList(self, didSelectGameWith: indexPath)
+    }
 }
 
 extension GameListView : UICollectionViewDataSource

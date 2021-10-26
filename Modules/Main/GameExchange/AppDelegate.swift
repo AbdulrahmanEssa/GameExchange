@@ -12,7 +12,7 @@ import HomePage
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    let entryVC = HomeViewController()
+    let entryVC = BarqTabBar()
     var window : UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

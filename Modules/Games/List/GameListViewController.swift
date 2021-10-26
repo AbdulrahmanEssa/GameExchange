@@ -9,30 +9,19 @@ import UIKit
 import SharedUI
 import GameExchangeSDK
 
-
 public class GameListViewController : UIViewController
 {
-    enum CellMode {
+    public enum ViewMode {
         case cover
         case summary
     }
     
     private var ui = GameListView()
     
-    private var currentPage : Int = 1
-    
-    private var cellMode : CellMode = .cover
-    {
-        didSet{
-            reloadData()
-        }
-    }
+    private var page : Int = 1
+    private var scrollDirection : UICollectionView.ScrollDirection = .vertical
+    private var viewMode : ViewMode = .cover
     private var itemLimit: Int = 0
-    {
-        didSet{
-            reloadData()
-        }
-    }
     
     private var games : [Game] = []
     
@@ -44,19 +33,20 @@ public class GameListViewController : UIViewController
     public override func viewDidLoad() {
         super.viewDidLoad()
 //        ui.entity = .demo
-//        ui.scrollDirection = .vertical
+        ui.scrollDirection = scrollDirection
+        ui.delegate = self
         hideNavbarIfFirstController()
-        //        fetchData()
+        fetchData(page: page, additive: false)
     }
     
     public func showNextPage(additive: Bool)
     {
-        fetchData(page: currentPage + 1, additive: additive)
+        fetchData(page: page + 1, additive: additive)
     }
     
     public func showPreviousPage(additive: Bool)
     {
-        fetchData(page: currentPage - 1, additive: additive)
+        fetchData(page: page - 1, additive: additive)
     }
     
     private func fetchData(page: Int, additive: Bool)
@@ -65,7 +55,7 @@ public class GameListViewController : UIViewController
             print("success")
             guard let results = gameList.results else {return}
             self.games = additive ? results : self.games + results
-            self.currentPage = page
+            self.page = page
             
             DispatchQueue.main.async {
                 self.reloadData()
@@ -76,20 +66,10 @@ public class GameListViewController : UIViewController
         }
     }
     
-    private func map(model : Game) -> GameListingEntity
-    {
-        return GameListingEntity.init(header: .init(name: model.name,
-                                                    rating: String(model.metacritic ?? 0),
-                                                    releaseDate: model.released,
-                                                    otherLabel: model.slug),
-                                      genres: model.genres?.map({$0.name ?? ""}),
-                                      images: model.shortScreenshots?.map({$0.image ?? ""}))
-    }
-    
     private func generateListingCells(entities: [GameListingEntity]) -> [GameListView.CellEntity]
     {
         var cellEntities: [GameListView.CellEntity] = []
-        switch cellMode {
+        switch viewMode {
         case .cover:
             for item in entities {
                 cellEntities.append(.cover(entity: item))
@@ -105,7 +85,7 @@ public class GameListViewController : UIViewController
     
     private func reloadData()
     {
-        var list : [GameListingEntity] = games.map({self.map(model: $0)})
+        var list : [GameListingEntity] = games.map({GameListingEntity.map(model: $0)})
         
         if list.count == 0 {
             list = [.demo,.demo,.demo,.demo,.demo,.demo,.demo,.demo,.demo,.demo,.demo,.demo,.demo,.demo,.demo,.demo,.demo,.demo,.demo,.demo,.demo,.demo,.demo,.demo,.demo,.demo,.demo,]
@@ -122,41 +102,53 @@ public class GameListViewController : UIViewController
 /// Access Points
 extension GameListViewController {
     
-    public static func grid() -> GameListViewController
+    public static func grid(page: Int, itemLimit: Int) -> GameListViewController
     {
         let controller : GameListViewController = {
             let c = GameListViewController()
-            c.cellMode = .cover
-            c.ui.scrollDirection = .vertical
+            c.page = page
+            c.itemLimit = itemLimit
+            c.viewMode = .cover
+            c.scrollDirection = .vertical
             return c
         }()
         
         return controller
     }
     
-    public static func summaries(itemLimit: Int, direction: UICollectionView.ScrollDirection) -> GameListViewController
+    public static func list(page:Int, itemLimit: Int) -> GameListViewController
     {
         let controller : GameListViewController = {
             let c = GameListViewController()
-            c.cellMode = .summary
-            c.ui.scrollDirection = direction
+            c.page = page
+            c.viewMode = .summary
             c.itemLimit = itemLimit
+            c.scrollDirection = .vertical
             return c
         }()
         
         return controller
     }
     
-    public static func singleRow(itemLimit: Int) -> GameListViewController
+    public static func singleRow(page: Int, itemLimit: Int, viewMode: ViewMode) -> GameListViewController
     {
         let controller : GameListViewController = {
             let c = GameListViewController()
-            c.cellMode = .cover
+            c.page = page
+            c.viewMode = viewMode
             c.itemLimit = itemLimit
-            c.ui.scrollDirection = .horizontal
+            c.scrollDirection = .horizontal
             return c
         }()
         
         return controller
+    }
+}
+
+extension GameListViewController : GameListViewDelegate {
+    func gameList(_ view: GameListView, didSelectGameWith indexPath: IndexPath) {
+        let controller = GameDetailsViewController.details(forGameWithId: (games[indexPath.row].id ?? 0), screenShots: games[indexPath.row].shortScreenshots?.map({$0.image ?? ""}))
+        
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B303F2FE271C448900C8D6B1 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B303F2FD271C448900C8D6B1 /* TestVC.swift */; };
 		B334340C269D822A00B8EB05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B334340B269D822A00B8EB05 /* AppDelegate.swift */; };
 		B3343415269D822B00B8EB05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3343414269D822B00B8EB05 /* Assets.xcassets */; };
 		B3343418269D822B00B8EB05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3343416269D822B00B8EB05 /* LaunchScreen.storyboard */; };
@@ -14,6 +15,9 @@
 		B337B40526C1AC460062459F /* Games.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B337B40326C1AC460062459F /* Games.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B3494D3B26A0212100048CCA /* SharedUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3494D3A26A0212100048CCA /* SharedUI.framework */; };
 		B3494D3C26A0212100048CCA /* SharedUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3494D3A26A0212100048CCA /* SharedUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B373118D2714DF820072AC61 /* Developers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B373118C2714DF820072AC61 /* Developers.framework */; };
+		B373118E2714DF820072AC61 /* Developers.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B373118C2714DF820072AC61 /* Developers.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B3A68E37271A20A600AE59D5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A68E36271A20A600AE59D5 /* MainTabBarController.swift */; };
 		B3B625262709B95B00BBBDE7 /* HomePage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B625252709B95B00BBBDE7 /* HomePage.framework */; };
 		B3B625272709B95B00BBBDE7 /* HomePage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3B625252709B95B00BBBDE7 /* HomePage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -26,6 +30,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				B3B625272709B95B00BBBDE7 /* HomePage.framework in Embed Frameworks */,
+				B373118E2714DF820072AC61 /* Developers.framework in Embed Frameworks */,
 				B337B40526C1AC460062459F /* Games.framework in Embed Frameworks */,
 				B3494D3C26A0212100048CCA /* SharedUI.framework in Embed Frameworks */,
 			);
@@ -35,6 +40,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B303F2FD271C448900C8D6B1 /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
 		B3343408269D822A00B8EB05 /* GameExchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameExchange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B334340B269D822A00B8EB05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3343414269D822B00B8EB05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -42,6 +48,8 @@
 		B3343419269D822B00B8EB05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B337B40326C1AC460062459F /* Games.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Games.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3494D3A26A0212100048CCA /* SharedUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SharedUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B373118C2714DF820072AC61 /* Developers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Developers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3A68E36271A20A600AE59D5 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		B3B625252709B95B00BBBDE7 /* HomePage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HomePage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -51,6 +59,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3B625262709B95B00BBBDE7 /* HomePage.framework in Frameworks */,
+				B373118D2714DF820072AC61 /* Developers.framework in Frameworks */,
 				B337B40426C1AC460062459F /* Games.framework in Frameworks */,
 				B3494D3B26A0212100048CCA /* SharedUI.framework in Frameworks */,
 			);
@@ -80,6 +89,8 @@
 			isa = PBXGroup;
 			children = (
 				B334340B269D822A00B8EB05 /* AppDelegate.swift */,
+				B3A68E36271A20A600AE59D5 /* MainTabBarController.swift */,
+				B303F2FD271C448900C8D6B1 /* TestVC.swift */,
 				B3343414269D822B00B8EB05 /* Assets.xcassets */,
 				B3343416269D822B00B8EB05 /* LaunchScreen.storyboard */,
 				B3343419269D822B00B8EB05 /* Info.plist */,
@@ -90,6 +101,7 @@
 		B3494D3926A0212100048CCA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B373118C2714DF820072AC61 /* Developers.framework */,
 				B3B625252709B95B00BBBDE7 /* HomePage.framework */,
 				B337B40326C1AC460062459F /* Games.framework */,
 				B3494D3A26A0212100048CCA /* SharedUI.framework */,
@@ -167,6 +179,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3A68E37271A20A600AE59D5 /* MainTabBarController.swift in Sources */,
+				B303F2FE271C448900C8D6B1 /* TestVC.swift in Sources */,
 				B334340C269D822A00B8EB05 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

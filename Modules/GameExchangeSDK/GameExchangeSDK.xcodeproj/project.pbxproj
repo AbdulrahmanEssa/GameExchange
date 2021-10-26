@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B337B43826C27AC80062459F /* GameExchangeSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = B337B43626C27AC80062459F /* GameExchangeSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B337B44B26C27B690062459F /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B337B44A26C27B690062459F /* Game.swift */; };
+		B3397A08270EFCE00042C3AF /* DevelopersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3397A07270EFCE00042C3AF /* DevelopersList.swift */; };
 		B352694326CC2B4400C10CE2 /* MetacriticPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = B352694226CC2B4400C10CE2 /* MetacriticPlatform.swift */; };
 		B352694526CC2B8100C10CE2 /* Requirements.swift in Sources */ = {isa = PBXBuildFile; fileRef = B352694426CC2B8100C10CE2 /* Requirements.swift */; };
 		B374E76526CA75F20048709A /* Developer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B374E76426CA75F20048709A /* Developer.swift */; };
@@ -49,6 +50,7 @@
 		B337B43626C27AC80062459F /* GameExchangeSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameExchangeSDK.h; sourceTree = "<group>"; };
 		B337B43726C27AC80062459F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B337B44A26C27B690062459F /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		B3397A07270EFCE00042C3AF /* DevelopersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopersList.swift; sourceTree = "<group>"; };
 		B352694226CC2B4400C10CE2 /* MetacriticPlatform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetacriticPlatform.swift; sourceTree = "<group>"; };
 		B352694426CC2B8100C10CE2 /* Requirements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requirements.swift; sourceTree = "<group>"; };
 		B374E76426CA75F20048709A /* Developer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Developer.swift; sourceTree = "<group>"; };
@@ -84,6 +86,8 @@
 		B337B42926C27AC80062459F = {
 			isa = PBXGroup;
 			children = (
+				B3397A07270EFCE00042C3AF /* DevelopersList.swift */,
+				B374E76426CA75F20048709A /* Developer.swift */,
 				B3792E7226C295FC0065215E /* GameList.swift */,
 				B337B44A26C27B690062459F /* Game.swift */,
 				B3792E7E26C296C20065215E /* AddedByStatus.swift */,
@@ -94,7 +98,6 @@
 				B3792E7626C296490065215E /* ShortScreenshot.swift */,
 				B3792E7826C296810065215E /* StoreListing.swift */,
 				B3792E7C26C296B50065215E /* Tag.swift */,
-				B374E76426CA75F20048709A /* Developer.swift */,
 				B3792E7426C296270065215E /* GameListFilter.swift */,
 				B3DF9A1926C3AFCC00174B09 /* FilterYear.swift */,
 				B3DF9A1B26C3AFEB00174B09 /* Year.swift */,
@@ -220,6 +223,7 @@
 				B3792E8326C296D90065215E /* ESRBRating.swift in Sources */,
 				B3792E7326C295FC0065215E /* GameList.swift in Sources */,
 				B337B44B26C27B690062459F /* Game.swift in Sources */,
+				B3397A08270EFCE00042C3AF /* DevelopersList.swift in Sources */,
 				B3792E7D26C296B50065215E /* Tag.swift in Sources */,
 				B3792E8B26C2971A0065215E /* Rating.swift in Sources */,
 				B3DF9A1C26C3AFEB00174B09 /* Year.swift in Sources */,

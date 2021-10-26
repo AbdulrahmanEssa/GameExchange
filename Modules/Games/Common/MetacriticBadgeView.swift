@@ -20,8 +20,6 @@ class MetacriticBadgeView : UIView
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.trySetImage(named: assets.metacriticBadge)
-        iv.layer.cornerRadius = 0
-        iv.layer.borderWidth = 2
         iv.layer.borderColor = colors.separator.cgColor
         iv.layer.masksToBounds = true
         iv.clipsToBounds = true
@@ -106,6 +104,5 @@ class MetacriticBadgeView : UIView
         ratingLabel.text = e.rating
         sourceLabel.isHidden = e.scoreSource == nil
         sourceLabel.text = e.scoreSource
-        
     }
 }

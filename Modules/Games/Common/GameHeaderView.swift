@@ -40,7 +40,6 @@ class GameHeaderView : UIView
         return l
     }()
     
-    
     lazy var otherLabel : UILabel = {
         let lbl = UILabel()
         lbl.text = "slug"

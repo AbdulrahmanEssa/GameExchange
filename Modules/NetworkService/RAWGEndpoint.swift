@@ -10,11 +10,11 @@ import Foundation
 public protocol RAWGEndpoint : Endpoint {
     
     var path: String {get}
-    var parameters: [String : String]? {get}
+    var parameters: [String : Any]? {get}
     var body: Data? {get}
     var method: HTTPMethod {get}
-    var query: [String : Any] {get}
-    var API_KEY: String {get}
+    var query: [String : String]? {get}
+    var additionalQuery: [String : String] {get}
 
 }
 
@@ -28,7 +28,7 @@ public extension RAWGEndpoint {
         }
         else
         {
-            u = "https://api.rawg.io/api" + path
+            u = Keys.rawg.BASE_URL + path
         }
         return u
     }
@@ -37,12 +37,14 @@ public extension RAWGEndpoint {
         return [:]
     }
     
-    var query : [String : Any] {
-        return query
+    var query : [String : String]? {
+        var q = additionalQuery
+        q["key"] = apiKey
+        return q
     }
     
-    var API_Key : String {
-        return "c52b8aabe474407db4a1cf013d0de8c5"
+    var apiKey : String {
+        return Keys.rawg.API_KEY
     }
     
 }

@@ -11,44 +11,44 @@ public extension Router {
     
     enum game : RAWGEndpoint {
         
+        
         case list(page: Int)
-        
-        public var API_KEY: String {
-            return "c52b8aabe474407db4a1cf013d0de8c5"
-        }
-        
+        case details(id: Int)
         
         public var method: HTTPMethod {
             switch self {
-                case .list:
-                    return .get
+            case .list:
+                return .get
+            case .details:
+                return .get
                     
             }
         }
         
         public var path: String {
             switch self {
-                case .list(let page):
+            case .list:
                     return "/games"
+            case .details(id: let id):
+                return "/games/" + String(id)
 
             }
         }
         
-        public var parameters: [String : String]? {
-            switch self{
-                case .list:
-                    return nil
-            }
+        public var parameters: [String : Any]? {
+            return nil
         }
         
         public var body: Data? {
             return nil
         }
         
-        public var query: [String : String]? {
+        public var additionalQuery: [String : String] {
             switch self {
-                case .list(let page):
-                    return ["page" : String(page), "key": "c52b8aabe474407db4a1cf013d0de8c5"]
+            case .list(page: let page):
+                return ["page" : String(page)]
+            case .details(id: _):
+                return [:]
             }
         }
     }

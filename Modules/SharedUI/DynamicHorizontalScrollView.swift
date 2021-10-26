@@ -6,7 +6,6 @@
 //
 
 import Foundation
-
 import UIKit
 
 public class DynamicHorizontalScrollView : UIView
@@ -37,9 +36,10 @@ public class DynamicHorizontalScrollView : UIView
         }
     }
     
-    let scrollView : UIScrollView = {
+    lazy var scrollView : UIScrollView = {
         let sv = UIScrollView()
         sv.alwaysBounceHorizontal = false
+        sv.backgroundColor = colors.void
         sv.translatesAutoresizingMaskIntoConstraints = false
         return sv
     }()
@@ -50,6 +50,7 @@ public class DynamicHorizontalScrollView : UIView
         sv.alignment = .fill
         sv.distribution = .fill
         sv.spacing = 0
+        sv.backgroundColor = colors.void
         sv.translatesAutoresizingMaskIntoConstraints = false
         return sv
     }()
@@ -57,7 +58,7 @@ public class DynamicHorizontalScrollView : UIView
     convenience init() {
         self.init(frame: .zero)
         
-        backgroundColor = colors.background
+        backgroundColor = colors.void
         setupLayout()
     }
     

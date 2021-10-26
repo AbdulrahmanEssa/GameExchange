@@ -12,8 +12,11 @@
 		B337B42426C1AD330062459F /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B337B42326C1AD330062459F /* Endpoint.swift */; };
 		B337B42626C1ADF70062459F /* TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = B337B42526C1ADF70062459F /* TypeAlias.swift */; };
 		B337B42826C274500062459F /* RAWGEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B337B42726C274500062459F /* RAWGEndpoint.swift */; };
+		B3397A0A270EFE2C0042C3AF /* Router+Developers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3397A09270EFE2C0042C3AF /* Router+Developers.swift */; };
+		B3397A0C270F02430042C3AF /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3397A0B270F02430042C3AF /* Keys.swift */; };
 		B3792E8D26C299800065215E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3792E8C26C299800065215E /* Router.swift */; };
 		B3792E8F26C299970065215E /* Router+Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3792E8E26C299970065215E /* Router+Games.swift */; };
+		B3A3B2F927182242005C9A68 /* Dictionary+PercentEncoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3B2F827182242005C9A68 /* Dictionary+PercentEncoded.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +27,11 @@
 		B337B42326C1AD330062459F /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		B337B42526C1ADF70062459F /* TypeAlias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAlias.swift; sourceTree = "<group>"; };
 		B337B42726C274500062459F /* RAWGEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAWGEndpoint.swift; sourceTree = "<group>"; };
+		B3397A09270EFE2C0042C3AF /* Router+Developers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Router+Developers.swift"; sourceTree = "<group>"; };
+		B3397A0B270F02430042C3AF /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		B3792E8C26C299800065215E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		B3792E8E26C299970065215E /* Router+Games.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Router+Games.swift"; sourceTree = "<group>"; };
+		B3A3B2F827182242005C9A68 /* Dictionary+PercentEncoded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+PercentEncoded.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,10 +48,13 @@
 		B337B40626C1ACCC0062459F = {
 			isa = PBXGroup;
 			children = (
+				B3A3B2F827182242005C9A68 /* Dictionary+PercentEncoded.swift */,
 				B3792E8E26C299970065215E /* Router+Games.swift */,
+				B3397A09270EFE2C0042C3AF /* Router+Developers.swift */,
 				B3792E8C26C299800065215E /* Router.swift */,
 				B337B42326C1AD330062459F /* Endpoint.swift */,
 				B337B42726C274500062459F /* RAWGEndpoint.swift */,
+				B3397A0B270F02430042C3AF /* Keys.swift */,
 				B337B42526C1ADF70062459F /* TypeAlias.swift */,
 				B337B42126C1ACEE0062459F /* HTTPMethod.swift */,
 				B337B41226C1ACCC0062459F /* NetworkService */,
@@ -150,10 +159,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B337B42626C1ADF70062459F /* TypeAlias.swift in Sources */,
+				B3397A0C270F02430042C3AF /* Keys.swift in Sources */,
 				B337B42426C1AD330062459F /* Endpoint.swift in Sources */,
 				B3792E8D26C299800065215E /* Router.swift in Sources */,
+				B3397A0A270EFE2C0042C3AF /* Router+Developers.swift in Sources */,
 				B337B42226C1ACEE0062459F /* HTTPMethod.swift in Sources */,
 				B3792E8F26C299970065215E /* Router+Games.swift in Sources */,
+				B3A3B2F927182242005C9A68 /* Dictionary+PercentEncoded.swift in Sources */,
 				B337B42826C274500062459F /* RAWGEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -108,7 +108,7 @@ class GameSummaryView : UIView
         guard let e = entity else {return}
         
         header.entity = e.header
-        genreBar.entity = .init(genres: e.genres ?? [])
+        genreBar.entity = .init(tags: e.genres ?? [])
         
         var imgs : [UIView] = []
         

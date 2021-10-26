@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import NetworkService
 
 
 public class Developer : Codable {
@@ -23,5 +24,9 @@ public class Developer : Codable {
         self.name = name
         self.slug = slug
         self.domain = domain
+    }
+    
+    public static func list(page: Int, success: @escaping Success<DeveloperList>, failure: @escaping Failure) {
+        Router.developer.list(page: page).request(success: success, failure: failure)
     }
 }

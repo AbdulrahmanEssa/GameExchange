@@ -15,10 +15,17 @@ public protocol AssetTheme {
     var textLogo : String {get}
     var secondaryTextLogo : String {get}
     
+    // Common icons
+    var arrowheadLeft: String {get}
+    var arrowheadDown: String {get}
+    var arrowheadUp: String {get}
+    var arrowheadRight: String {get}
+    
     // Placeholders
     var placeholderGameImage : String {get}
     var placeholderESRB : String {get}
     var placeholderGameCover: String {get}
+    var placeholderDeveloperIcon : String {get}
     
     // Games
     var metacriticBadge : String {get}

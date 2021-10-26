@@ -35,7 +35,7 @@ public extension UICollectionViewFlowLayout {
         case .thirdWidth(height: let h):
             return CGSize(width: collectionView.bounds.width / 3, height: getCellHeight(height: h))
         case .quarterWidth(height: let h):
-            return CGSize(width: collectionView.bounds.width, height: getCellHeight(height: h))
+            return CGSize(width: collectionView.bounds.width / 4, height: getCellHeight(height: h))
         case .multiItem(items: let i, height: let h):
             return CGSize(width: itemSize.width * i, height: getCellHeight(height: h))
         case .custom(size: let s):

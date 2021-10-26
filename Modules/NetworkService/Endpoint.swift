@@ -9,7 +9,7 @@ import Foundation
 
 public protocol Endpoint {
     var url: String {get}
-    var parameters: [String: String]? {get}
+    var parameters: [String: Any]? {get}
     var body : Data? {get}
     var method: HTTPMethod { get}
     var headers: [String: String]? {get}
@@ -36,6 +36,10 @@ extension Endpoint {
         var request = URLRequest(url: url!,cachePolicy: .useProtocolCachePolicy,timeoutInterval: 12.0)
         request.httpMethod = method.rawValue
         request.allHTTPHeaderFields = headers
+        if (parameters != nil)
+        {
+            request.httpBody = parameters!.percentEncoded()
+        }
         
         print(request.url)
 
