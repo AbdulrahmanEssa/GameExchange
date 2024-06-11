@@ -175,9 +175,9 @@ extension GameListView : UICollectionViewDataSource
         
         cell.backgroundColor = .blue
         
-        cell.subviews.first(where: {$0.tag == 999})?.removeFromSuperview()
-        
-        view.tag = 999
+//        cell.subviews.first(where: {$0.tag == 999})?.removeFromSuperview()
+//        
+//        view.tag = 999
         
         cell.contentView.addSubview(view)
         cell.contentView.addConstraints([

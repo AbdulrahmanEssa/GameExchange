@@ -33,7 +33,7 @@ extension Endpoint {
         
         let url = components?.url
         
-        var request = URLRequest(url: url!,cachePolicy: .useProtocolCachePolicy,timeoutInterval: 12.0)
+        var request = URLRequest(url: url!,cachePolicy: .useProtocolCachePolicy,timeoutInterval: 120.0)
         request.httpMethod = method.rawValue
         request.allHTTPHeaderFields = headers
         if (parameters != nil)
@@ -41,7 +41,7 @@ extension Endpoint {
             request.httpBody = parameters!.percentEncoded()
         }
         
-        print(request.url)
+//        print(request.url)
 
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in

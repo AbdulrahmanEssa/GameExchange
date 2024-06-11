@@ -28,4 +28,23 @@ public extension UIImageView
             return false
         }
     }
+    
+    @discardableResult
+    func trySetImage(named: String?, withTint color : UIColor) -> Bool
+    {
+        guard let named = named else {return false}
+        
+        let i = UIImage(named: named)?.withTintColor(color)
+        if i != nil
+        {
+            image = i
+            return true
+        }
+        else
+        {
+            let url = URL(string: named)
+            kf.setImage(with: url)
+            return false
+        }
+    }
 }

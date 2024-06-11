@@ -152,3 +152,5 @@ extension GameListViewController : GameListViewDelegate {
         self.navigationController?.pushViewController(controller, animated: true)
     }
 }
+
+

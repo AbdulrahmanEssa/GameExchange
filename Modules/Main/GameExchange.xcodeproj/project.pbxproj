@@ -15,8 +15,6 @@
 		B337B40526C1AC460062459F /* Games.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B337B40326C1AC460062459F /* Games.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B3494D3B26A0212100048CCA /* SharedUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3494D3A26A0212100048CCA /* SharedUI.framework */; };
 		B3494D3C26A0212100048CCA /* SharedUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3494D3A26A0212100048CCA /* SharedUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B373118D2714DF820072AC61 /* Developers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B373118C2714DF820072AC61 /* Developers.framework */; };
-		B373118E2714DF820072AC61 /* Developers.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B373118C2714DF820072AC61 /* Developers.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B3A68E37271A20A600AE59D5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A68E36271A20A600AE59D5 /* MainTabBarController.swift */; };
 		B3B625262709B95B00BBBDE7 /* HomePage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B625252709B95B00BBBDE7 /* HomePage.framework */; };
 		B3B625272709B95B00BBBDE7 /* HomePage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3B625252709B95B00BBBDE7 /* HomePage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -30,7 +28,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				B3B625272709B95B00BBBDE7 /* HomePage.framework in Embed Frameworks */,
-				B373118E2714DF820072AC61 /* Developers.framework in Embed Frameworks */,
 				B337B40526C1AC460062459F /* Games.framework in Embed Frameworks */,
 				B3494D3C26A0212100048CCA /* SharedUI.framework in Embed Frameworks */,
 			);
@@ -59,7 +56,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3B625262709B95B00BBBDE7 /* HomePage.framework in Frameworks */,
-				B373118D2714DF820072AC61 /* Developers.framework in Frameworks */,
 				B337B40426C1AC460062459F /* Games.framework in Frameworks */,
 				B3494D3B26A0212100048CCA /* SharedUI.framework in Frameworks */,
 			);

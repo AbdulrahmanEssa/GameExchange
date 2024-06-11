@@ -27,8 +27,8 @@ class BarqTabBar : UITabBarController
         tabBar.unselectedItemTintColor = colors.tabBarUnselectedItemTint;
         tabBar.isTranslucent = false;
         
-        games = UINavigationController.init(rootViewController: GameListViewController())
-        test = UINavigationController.init(rootViewController: TestVC())
+        games = UINavigationController.init(rootViewController: GameListViewController.list(page: 1, itemLimit: 0))
+        test = UINavigationController.init(rootViewController: GameListViewController.grid(page: 1, itemLimit: 0))
         
         viewControllers = [games,test]
 
